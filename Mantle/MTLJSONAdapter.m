@@ -217,6 +217,10 @@ NSString * const MTLJSONAdapterThrownExceptionErrorKey = @"MTLJSONAdapterThrownE
 			}
 		}
 
+		if ((!value || value == NSNull.null)) {
+			return;
+		}
+		
 		void (^createComponents)(id, NSString *) = ^(id obj, NSString *keyPath) {
 			NSArray *keyPathComponents = [keyPath componentsSeparatedByString:@"."];
 
